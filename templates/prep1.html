@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Prediciton</title>
+
+  <!-- CSS  -->
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/> -->
+
+
+  <style>
+
+    body{
+    background-image: url('https://images.pexels.com/photos/6570677/pexels-photo-6570677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size:cover;
+    font-family:"Poppins",sans-serif;
+}
+
+  </style>
+</head>
+
+<body>
+
+    <div class="mid">
+        <ul class="navbar" style="background-color:black">
+            <li><img src = {{url_for('static',filename='images/logo.png')}} style=" width : 80px;"></li>
+            <li style="position:relative;top:20%"><a href="{{url_for('hello_world')}}" style="text-decoration: none; color: white; font-size: 17px;width : 80px;position:relative;left:50% ;  padding: 10px 0 0 0;">HOME</a>
+                <a href="{{ url_for('hello')}} " style="text-decoration: none; color: white; font-size: 17px;width : 80px;position:relative;left:55%">PREDICTION</a>
+              <a href="{{ url_for('next')}} " style="text-decoration: none; color: white; font-size: 17px;width : 80px;position:relative;left:60%">NOTIFY</a>
+            </li>
+        </ul>
+    </div>
+
+  <div class="section no-pad-bot position-relative" id="index-banner">
+    <div class="container  position-absolute top-50 start-50">
+      <br><br>
+      <h1 class="header center black-text" style="position: absolute; left: 5%;">Tell us More</h1>
+      <div class="next_row">
+        <form action='/page1' method="post" class="col s12">
+            <div class="row1">
+
+                <div class="input-field col s4" >
+                    <label for="name" class="white-text"><b style="font-size:30px; position:absolute; left: 5%; top:35%">Name</b></label>
+                    <br>
+                    <input id="name" name="value1" placeholder="type your name"  type="text" class="validate" style="position: absolute; left: 5%;top:40%;  border-bottom: 1px solid black;outline: none;background: none;">
+                  </div>
+
+                  <div class="input-field col s4">
+                    <label for="number" class="white-text"><b style="font-size:30px; position:absolute; left: 5%;top:45%">Phone</b></label>
+                    <br>
+                    <input id="number" name="value2" placeholder="type your number"  type="text" class="validate" style="position: absolute; left: 5%;top:50%;border-bottom: 1px solid black;outline: none;background: none;">
+                  </div>
+                <div class="input-field col s4">
+                    <label for="place" class="white-text"><b style="font-size:30px; position:absolute; left: 5%;top:55%">Place</b></label>
+                    <br>
+                    <select  name="value3" id="place" type="text" class="validate" style="position: absolute; left: 5%;top:60%;border-bottom: 1px solid black;outline: none;background: none;">
+                        <option class="white-text"><b style="font-size:30px">---Select forest---</option>
+                        <option class="white-text"><b style="font-size:30px">Abujmarh forest</option>
+                        <option class="white-text"><b style="font-size:30px">Annekal Reserved Forest</option>
+                        <option class="white-text"><b style="font-size:30px">Baikunthapur Forest</option>
+                        <option class="white-text"><b style="font-size:30px">Bandipur National Park</option>
+                        <option class="white-text"><b style="font-size:30px">Bhadra Wildlife Sanctuary</option>
+                        <option class="white-text"><b style="font-size:30px">Bhagwan Mahaveer Sanctuary and Mollem National Park</option>
+                        <option class="white-text"><b style="font-size:30px">Bhitarkanika Mangroves</option>
+                        <option class="white-text"><b style="font-size:30px">Bondla Wildlife Sanctuary</option>
+                        <option class="white-text"><b style="font-size:30px">Cotigao Wildlife Sanctuary</option>
+                        <option class="white-text"><b style="font-size:30px">Gir National Park</option>
+                        <option class="white-text"><b style="font-size:30px">Jakanari reserve forest</option>
+                        <option class="white-text"><b style="font-size:30px">Jim Corbett National Park</option>
+                        <option class="white-text"><b style="font-size:30px">Kanha National Park</option>
+                        <option class="white-text"><b style="font-size:30px">Keibul Lamjao National Park</option>
+                        <option class="white-text"><b style="font-size:30px">Kukrail Reserve Forest</option>
+                        <option class="white-text"><b style="font-size:30px">Mhadei Wildlife Sanctuary</option>
+                        <option class="white-text"><b style="font-size:30px">Molai forest</option>
+                        <option class="white-text"><b style="font-size:30px">Nagarhole National Park</option>
+                        <option class="white-text"><b style="font-size:30px">Nallamala Hills</option>
+                        <option class="white-text"><b style="font-size:30px">Namdapha National Park</option>
+                        <option class="white-text"><b style="font-size:30px">Nanmangalam forest</option>
+                        <option class="white-text"><b style="font-size:30px">Netravali Wildlife Sanctuary</option>
+                        <option class="white-text"><b style="font-size:30px">New Amarambalam Reserved Forest</option>
+                        <option class="white-text"><b style="font-size:30px">Pichavaram Mangrove Forest</option>
+                        <option class="white-text"><b style="font-size:30px">Salim Ali Bird Sanctuary</option>
+                        <option class="white-text"><b style="font-size:30px">Saranda forest</option>
+                        <option class="white-text"><b style="font-size:30px">Shettihalli</option>
+                        <option class="white-text"><b style="font-size:30px">Sundarbans</option>
+                        <option class="white-text"><b style="font-size:30px">Tadoba Andhari Tiger Reserve</option>
+                        <option class="white-text"><b style="font-size:30px">Vandalur Reserve Forest</option>
+                        <option class="white-text"><b style="font-size:30px">Wayanad Wildlife Sanctuary</option>
+                    </select>
+                  </div>
+            </div>
+
+
+
+        
+      </div>
+
+   
+
+      <div class="row center">
+
+          <button type="submit" class="btn-large waves-effect waves-light green" style="size:50px;
+            background-image: linear-gradient(to right, #EDE574 0%, #E1F5C4  51%, #EDE574  100%);
+   border-radius: 60px; color:black;position: absolute; left: 5%;top:70%">submit</button>
+      </div>
+    </form>
+      </div>
+
+      <br>
+        <b style="font-size:30px;color:white;position: absolute; left: 5%;top:60%">{{pred}}<b></b><br>
+
+    </div>
+  </div>
+
+
+
+    <br><br>
+    <br>
+    <b style="font-size:30px;color:white">{{out}}<b></b><br>
+  </div>
+  </div>
+
+
+  <!--  Scripts-->
+  <!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script> -->
+
+  </body>
+</html>

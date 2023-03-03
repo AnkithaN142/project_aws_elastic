@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>PREDICITON</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+
+  <style>
+
+    body{
+    background-image: url('https://images.pexels.com/photos/9754/mountains-clouds-forest-fog.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size:cover;
+    font-family:"Poppins",sans-serif;
+}
+
+  </style>
+</head>
+
+<body>
+
+    <div class="mid">
+      
+        <ul class="navbar" style="background-color:black">
+            <li><img src = {{url_for('static',filename='images/logo.png')}} style=" width : 80px;"></li>
+            <li style="position:relative;top:20%">
+              <a href="{{url_for('hello_world')}}" style="text-decoration: none; color: white; font-size: 17px;width : 80px;position:relative;left:50% ;  padding: 10px 0 0 0;">HOME</a>
+              <a href="{{ url_for('hello')}} " style="text-decoration: none; color: white; font-size: 17px;width : 80px;position:relative;left:55%">PREDICTION</a>
+              <a href="{{ url_for('next')}} " style="text-decoration: none; color: white; font-size: 17px;width : 80px;position:relative;left:60%">NOTIFY</a>
+            </li>
+        </ul>
+    
+    </div>
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center black-text">Forest Fire Prevention</h1>
+
+    <div class="row">
+    <form action='/page' method="post" class="col s12">
+      <div class="row">
+
+        <div class="input-field col s4  ">
+          <label for="FFMC" class="white-text"><b style="font-size:30px">FFMC</b></label>
+          <br><br><br>
+          <input placeholder="FFMC Index 18.7-96.20 in FWI system" name="value1" id="FFMC" type="text" class="validate">
+        </div>
+
+        <div class="input-field col s4">
+          <label for="DMC" class="white-text"><b style="font-size:30px">DMC</b></label>
+          <br><br><br>
+          <input id="DMC" name="value2" placeholder="DMC Index 1.1-291.3 in FWI system"  type="text" class="validate">
+        </div>
+
+        <div class="input-field col s4">
+          <label for="DC" class="white-text"><b style="font-size:30px">DC</b></label>
+          <br><br><br>
+          <input id="DC" name="value3" placeholder="DC Index 7.9-860.6 in FWI system"  type="text" class="validate">
+        </div>
+
+        <div class="input-field col s4 ">
+          <label for="ISI" class="white-text"><b style="font-size:30px">ISI</b></label>
+          <br><br><br>
+          <input id="ISI" name="value4" placeholder="ISI Index 0.0-56.10 in FWI system"  type="text" class="validate">
+        </div>
+
+        <div class="input-field col s4">
+          <label for="Temperature" class="white-text"><b style="font-size:30px">Temperature</b></label>
+          <br><br><br>
+          <input id="Temperature" name="value5" placeholder="2.2-33.30 degrees Celcius"  type="text" class="validate">
+        </div>
+
+        <div class="input-field col s4">
+          <label for="RH" class="white-text"><b style="font-size:30px">RH</b></label>
+          <br><br><br>
+          <input id="RH" name="value6" placeholder="RH% 15.0-100.0" type="text" class="validate">
+        </div>
+        <div class="input-field col s4">
+          <label for="Wind" class="white-text"><b style="font-size:30px">Wind</b></label>
+          <br><br><br>
+          <input id="Wind" name="value7" placeholder="Wind km/hr 0.49-9.40" type="text" class="validate">
+        </div>
+        <div class="input-field col s4">
+          <label for="Rain" class="white-text"><b style="font-size:30px">Rain</b></label>
+          <br><br><br>
+          <input id="Rain" name="value8" placeholder="Rain mm/m2 0.0-6.4" type="text" class="validate">
+        </div>
+      </div>
+
+      <div class="row center">
+
+          <button type="submit" class="btn-large waves-effect waves-light green" style="
+            background-image: linear-gradient(to right, #EDE574 0%, #E1F5C4  51%, #EDE574  100%);
+   border-radius: 30px; color:black;">Predict Probability</button>
+      </div>
+    </form>
+      </div>
+
+      <br>
+        <b style="font-size:30px;color:white">{{pred}}<b></b><br>
+
+    </div>
+  </div>
+
+
+
+    <br><br>
+  </div>
+  </div>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>

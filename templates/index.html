@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>welcome</title>
+<!--     <link rel="stylesheet" href="{{url_for('static',filename='css/sty1.css')}}">-->
+    <style>
+
+    </style>
+</head>
+<body bgcolor="black">
+
+
+<div class="hero">
+
+<nav style="background-color:black;">
+    <img src = {{url_for('static',filename='images/logo.png')}} style=" width : 80px; position: absolute; top:0;left: 0;padding: 20px 8%;display: flex;align-items: center;justify-content:space-between;">
+    <h1 style="color:white;position: absolute; top:-20;left: 500;font-size:60px;">Forest Fire</h1>
+         
+             <li style=" list-style:none; display: inline; margin-left: 40px;"><a style="text-decoration: none; color: white; font-size: 17px;width : 80px; position: absolute; top:50;left: 1000;padding: 20px 8%;display: flex;align-items: center;justify-content:space-between;" href="{{ url_for('hello_world')}}">HOME</a></li>
+             <li style=" list-style:none; display: inline; margin-left: 40px;"><a style="text-decoration: none; color: white; font-size: 17px;width : 80px; position: absolute; top:50;left: 1100;padding: 20px 8%;display: flex;align-items: center;justify-content:space-between;" href="{{ url_for('hello')}}">PREDICTION</a></li>
+    
+             <li style=" list-style:none; display: inline; margin-left: 40px;"><a style="text-decoration: none; color: white; font-size: 17px;width : 80px; position: absolute; top:50;left: 1300;padding: 20px 8%;display: flex;align-items: center;justify-content:space-between;" >NOTIFY</a> </li>
+         </ul>
+    <h1 style="font-size: 50px; color: black; font-weight: 600; position: absolute; top:200;left: 600;" >Save for Future</h1>
+</nav>
+<!--    <img src="{{url_for('static',filename='images/backy1.jpg')}}">-->
+    <video autoplay loop muted plays-inline 6t style="position:absolute; top:15%;">
+    <source src="{{url_for('static',filename='images/fire_back1.mp4')}}"  >
+
+
+
+<!--</video>-->
+</div>
+
+</body>
+</html>
